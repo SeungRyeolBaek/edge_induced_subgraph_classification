@@ -1,0 +1,10 @@
+aggr: mean
+batch_size: 162
+conv_layer: 3
+dropout: 0.2490333469703571
+hidden_dim: 64
+jk: 0
+lr: 0.003049979343796108
+pool: sum
+resi: 0.885745976566123
+z_ratio: 0.716997391102182

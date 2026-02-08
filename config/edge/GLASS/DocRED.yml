@@ -1,0 +1,10 @@
+conv_layer: 7
+pool: mean
+lr: 0.0008491700753074523
+dropout: 0.40949484854146
+hidden_dim: 64
+aggr: mean
+jk: 0
+z_ratio: 0.69223045242597
+batch_size: 238
+resi: 0.579720163682307

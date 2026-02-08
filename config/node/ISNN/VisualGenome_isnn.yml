@@ -1,0 +1,10 @@
+conv_layer: 8
+dropout: 0.5966340877346031
+gamma: 0.0007703075470757227
+hidden_dim: 64
+inner_iters: 8
+kappa: 0.9530694069277406
+knn: 36
+lr: 0.00012760570948599058
+switch_epoch: -1
+weight_decay: 4.068963687223786e-05

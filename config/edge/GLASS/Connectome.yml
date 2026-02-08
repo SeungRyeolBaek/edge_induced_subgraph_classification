@@ -1,0 +1,10 @@
+conv_layer: 5
+pool: max
+lr: 0.0016345569948824695
+dropout: 0.018298147668223172
+aggr: sum
+jk: 0
+z_ratio: 0.6004318410621321
+batch_size: 72
+resi: 0.3002220136180386
+hidden_dim: 64

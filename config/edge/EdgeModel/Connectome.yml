@@ -1,0 +1,8 @@
+alpha: 0.8161990680129593
+batch_size: 177
+dropout: 0.3404646397329399
+hidden_dim: 64
+lr: 0.0007961045222845833
+num_layers: 8
+obj_repeats: 3
+resi: 0.527801217442954
