@@ -1,0 +1,47 @@
+# GNNseg
+nohup python3 -u GNNseg.py --dataset DocRED --device 0 --optruns 100 --repeat 10 --batch_size 160 --aggr sum --use_degree > log/GNNseg_DocRED.log 2>&1 &
+nohup python3 -u GNNseg.py --dataset VisualGenome --device 1 --optruns 100 --repeat 10 --batch_size 160 --aggr sum --use_degree > log/GNNseg_VisualGenome.log 2>&1 &
+nohup python3 -u GNNseg.py --dataset Connectome --device 2 --optruns 100 --repeat 10 --batch_size 160 --aggr sum --use_degree > log/GNNseg_Connectome.log 2>&1 &
+
+# GNNplain
+nohup python3 -u GLASS.py --dataset DocRED --device 0 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/GNNplain_DocRED.log 2>&1 &
+nohup python3 -u GLASS.py --dataset VisualGenome --device 1 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/GNNplain_VisualGenome.log 2>&1 &
+nohup python3 -u GLASS.py --dataset Connectome --device 2 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/GNNplain_Connectome.log 2>&1 &
+
+#GLASS
+nohup python3 -u GLASS.py --dataset DocRED --device 0 --optruns 100 --repeat 10 --use_seed --use_nodeid --use_maxzeroone > log/GLASS_DocRED.log 2>&1 &
+nohup python3 -u GLASS.py --dataset VisualGenome --device 1 --optruns 100 --repeat 10 --use_seed --use_nodeid --use_maxzeroone > log/GLASS_VisualGenome.log 2>&1 &
+nohup python3 -u GLASS.py --dataset Connectome --device 2 --optruns 100 --repeat 10 --use_seed --use_nodeid --use_maxzeroone > log/GLASS_Connectome.log 2>&1 &
+
+# ISNN
+nohup python3 -u ISNN.py --dataset DocRED --device 0 --optruns 100 --repeat 10 --use_seed --hidden_dim 64 > log/ISNN_DocRED.log 2>&1 &
+nohup python3 -u ISNN.py --dataset VisualGenome --device 1 --optruns 100 --repeat 10 --use_seed --hidden_dim 64 > log/ISNN_VisualGenome.log 2>&1 &
+nohup python3 -u ISNN.py --dataset Connectome --device 2 --optruns 100 --repeat 10 --use_seed --hidden_dim 64 > log/ISNN_Connectome.log 2>&1 &
+
+# SSNP
+nohup python3 -u SSNP.py --dataset DocRED --device 0 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/SSNP_DocRED.log 2>&1 &
+nohup python3 -u SSNP.py --dataset VisualGenome --device 1 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/SSNP_VisualGenome.log 2>&1 &
+nohup python3 -u SSNP.py --dataset Connectome --device 2 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/SSNP_Connectome.log 2>&1 &
+
+# Edge_model
+nohup python3 -u test_edge_model.py --dataset DocRED --device 0 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/edge_test_DocRED.log 2>&1 &
+nohup python3 -u test_edge_model.py --dataset VisualGenome --device 1 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/edge_test_VisualGenome.log 2>&1 &
+nohup python3 -u test_edge_model.py --dataset Connectome --device 2 --optruns 100 --repeat 10 --use_seed --use_nodeid > log/edge_test_Connectome.log 2>&1 &
+
+
+# Ablation Study
+nohup python3 -u test_edge_model_union.py --dataset DocRED --device 0 --repeat 10 --use_seed --use_nodeid > log/edge_union_DocRED.log 2>&1 &
+nohup python3 -u test_edge_model_union.py --dataset VisualGenome --device 1 --repeat 10 --use_seed --use_nodeid > log/edge_union_VisualGenome.log 2>&1 &
+nohup python3 -u test_edge_model_union.py --dataset Connectome --device 0 --repeat 10 --use_seed --use_nodeid > log/edge_union_Connectome.log 2>&1 &
+
+nohup python3 -u test_edge_model_node_induced.py --dataset DocRED --device 2 --repeat 10 --use_seed --use_nodeid > log/edge_node_induced_DocRED.log 2>&1 &
+nohup python3 -u test_edge_model_node_induced.py --dataset VisualGenome --device 1 --repeat 10 --use_seed --use_nodeid > log/edge_node_induced_VisualGenome.log 2>&1 &
+nohup python3 -u test_edge_model_node_induced.py --dataset Connectome --device 0 --repeat 10 --use_seed --use_nodeid > log/edge_node_induced_Connectome.log 2>&1 &
+
+# Alpha sweep
+nohup python3 -u test_alpha.py --dataset DocRED --device 0 --repeat 10 --use_seed --use_nodeid --hidden_dim 64 --config_dir config/edge/EdgeModel --alphas 0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.0 --max_epoch 500 --val_start 100 --out_dir alpha_sweep_results > log/alpha_test_DocRED.log 2>&1 &
+nohup python3 -u test_alpha.py --dataset VisualGenome --device 1 --repeat 10 --use_seed --use_nodeid --hidden_dim 64 --config_dir config/edge/EdgeModel --alphas 0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.0 --max_epoch 500 --val_start 100 --out_dir alpha_sweep_results > log/alpha_test_VisualGenome.log 2>&1 &
+nohup python3 -u test_alpha.py --dataset Connectome --device 0 --repeat 10 --use_seed --use_nodeid --hidden_dim 64 --config_dir config/edge/EdgeModel --alphas 0.55,0.60,0.65,0.70,0.75,0.80,0.85,0.90,0.95,1.0 --max_epoch 500 --val_start 100 --out_dir alpha_sweep_results > log/alpha_test_Connectome.log 2>&1 &
+
+# Plot Alpha sweep
+python3 plot_alpha_sweep.py --in_dir alpha_sweep_results --datasets DocRED VisualGenome Connectome --metric test --shade std --opacity 0.30 --linewidth 3.0 --xticks 0.55,0.70,0.85,1.0 --font_size 20 --save_pdf
