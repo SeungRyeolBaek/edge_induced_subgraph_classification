@@ -1,5 +1,5 @@
 # Edge Induced Subgraph Classification
-This is an official implementation of the paper "Edge-Induced Subgraph Representation Learning" 
+This is the official implementation of “Edge-Induced Subgraph Representation Learning,” presented at the KDD 2026 Research Track.
 
 You can access to the paper with the following link : https://dl.acm.org/doi/10.1145/3770855.3818085 
 
