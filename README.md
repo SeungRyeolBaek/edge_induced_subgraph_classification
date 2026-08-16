@@ -1,5 +1,6 @@
 # Edge Induced Subgraph Classification
-This is an official implementation of the paper "Edge-Induced Subgraph Representation Learning"
+This is an official implementation of the paper "Edge-Induced Subgraph Representation Learning" 
+
 You can access to the paper with the following link : https://dl.acm.org/doi/10.1145/3770855.3818085 
 
 Run shell commands written in command.txt to reproduce our experiment results
